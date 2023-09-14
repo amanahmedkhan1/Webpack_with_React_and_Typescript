@@ -1,2 +1,2 @@
-# Webpack_with_React_and_typescript
-Created WebPack bundle with React, Typescript, Javascript and HTML5
+# Webpack 5 with React & Typescript
+Created WebPack bundle with React, Typescript, Javascript, and HTML5
