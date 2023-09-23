@@ -1,11 +1,15 @@
 import React from 'react';
-import { Countdown } from './Components/Countdown';
+import { Header } from './Components/Header/Header';
+import { Footer } from './Components/Footer/Footer';
 
 const App = () => {
   return (
     <div>
-      <div>React App Component</div>
-      <Countdown count={665} />
+      <Header heading='Main Header' />
+
+      <div>Welcome React App</div>
+      
+      <Footer/>
     </div>
   )
 }
