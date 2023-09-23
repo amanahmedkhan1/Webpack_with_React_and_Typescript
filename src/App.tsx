@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from './Components/Header/Header';
 import { Footer } from './Components/Footer/Footer';
 
-const App = () => {
+const App = (): JSX.Element => {
   return (
     <div>
       <Header heading='Main Header' />
