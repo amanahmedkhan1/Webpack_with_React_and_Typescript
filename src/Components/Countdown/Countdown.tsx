@@ -1,26 +1,26 @@
 import React from "react";
 import { ICountdown } from "./Countdown.types";
-import { CountdownWrapper, CountdownHeading, CountdownButton } from "./Countdown.styled";
+import * as S from "./Countdown.styled";
 
-export const Countdown = (props: ICountdown): JSX.Element => {
+export const Countdown = ({ heading, count }: ICountdown): JSX.Element => {
     return (
-    <CountdownWrapper>
-        <CountdownHeading>
-            {props.heading}
-        </CountdownHeading>
+    <S.CountdownWrapper>
+        <S.CountdownHeading>
+            {heading}
+        </S.CountdownHeading>
 
-        <CountdownHeading>
-            {props.count}
-        </CountdownHeading>
+        <S.CountdownHeading>
+            {count}
+        </S.CountdownHeading>
         
-        <div className="dFlex">
-            <CountdownButton className="bgRed">
+        <S.ButtonWrapper>
+            <S.CountdownButton>
                 - Dicressed
-            </CountdownButton>
-            <CountdownButton className="bgBlue">
+            </S.CountdownButton>
+            <S.CountdownButton color={'blue'}>
                 + Incressed
-            </CountdownButton>
-        </div>
+            </S.CountdownButton>
+        </S.ButtonWrapper>
 
-    </CountdownWrapper>);
+    </S.CountdownWrapper>);
 };
