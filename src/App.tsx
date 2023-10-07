@@ -8,7 +8,7 @@ const App = (): JSX.Element => {
     <div>
       <Header heading='Main Header' />
       <div>Welcome React App</div>
-      <Countdown count={665} heading='Countdown' />
+      <Countdown count={0} heading='Countdown' />
       <Footer/>
     </div>
   )
