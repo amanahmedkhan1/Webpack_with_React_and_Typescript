@@ -5,29 +5,16 @@ import * as S from "./Countdown.styled";
 export const Countdown = ({ heading, count }: ICountdown): JSX.Element => {
     const [currentCount, setCurrentCount] = useState<number>(count);
     
-    // const increment = () => {
-    //     setCurrentCount(prevState => {
-    //         return prevState + 1;
-    //     });
-    // }
-
-    // const decrement = () => {
-    //     setCurrentCount(prevState => {
-    //         return prevState - 1;
-    //     });
-    // }
-    
-    const incrementDecrement = (increment : boolean) => {
-        if(increment = true){
-            setCurrentCount(prevState => {
-                return prevState + 1;
-            });
-        }else{
-            setCurrentCount(prevState => {
-                return prevState - 1;
-            });
-        };
-    }
+    const incrementDecrement = (isIncrement : boolean) => {
+        return isIncrement
+            ? setCurrentCount((prevState: number) => {return prevState + 1})
+            : setCurrentCount((prevState: number) => {
+                if(prevState <= 0){
+                    return prevState
+                }
+                return prevState - 1
+            })
+    };
 
     return (
         <S.CountdownWrapper>
@@ -40,8 +27,8 @@ export const Countdown = ({ heading, count }: ICountdown): JSX.Element => {
             </S.CountdownHeading>
             
             <S.ButtonWrapper>
-                <S.CountdownButton onClick={() => incrementDecrement(false)}>
-                    - Dicressed
+                <S.CountdownButton disabled={!currentCount} onClick={() => incrementDecrement(false)}>
+                    - Decrease
                 </S.CountdownButton>
                 <S.CountdownButton color={'blue'} onClick={() => incrementDecrement(true)}>
                     + Incressed
