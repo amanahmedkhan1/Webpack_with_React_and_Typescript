@@ -6,10 +6,10 @@ import { Countdown } from './Components/Countdown';
 const App = (): JSX.Element => {
   return (
     <div>
-      <Header heading='Main Header' />
+      <Header heading='React Pre Build Components' navItem='Home' />
       <div>Welcome React App</div>
-      <Countdown count={665} heading='Countdown' />
-      <Footer/>
+      <Countdown count={0} heading='Countdown' />
+      <Footer heading="Copyright"/>
     </div>
   )
 }
